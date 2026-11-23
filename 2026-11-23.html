@@ -3,156 +3,195 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOAT NAVI 実況 2026-11-23 | 仙狐さんの占い</title>
+<title>仙狐さんの占い | BOAT NAVI 実況 2026-11-23</title>
 <style>
   * { box-sizing: border-box; }
-  body { font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #f4f5f7; color: #1d2129; font-size: 16px; }
-  .wrap { max-width: 760px; margin: 0 auto; padding: 1.6em 1.1em 2.4em; }
-  h1 { font-size: 22px; margin: 0 0 .35em; }
-  .updated { color: #6b7280; font-size: 13px; margin: 0 0 1.4em; }
-  .card { background: #fff; border: 1px solid #e8eaed; border-radius: 12px; padding: 1.1em 1.2em; margin-bottom: 1.4em; }
-  h2 { font-size: 17px; margin: 0 0 .8em; }
-  .note { color: #4b5563; font-size: 14px; line-height: 1.7; }
+  body { font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #16122b; color: #ece7f5; font-size: 16px; }
+  .stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: radial-gradient(rgba(255,236,180,.5) 1px, transparent 1.4px), radial-gradient(rgba(200,190,255,.35) 1px, transparent 1.4px); background-size: 90px 90px, 140px 140px; background-position: 0 0, 40px 60px; opacity: .5; }
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 1.8em 1.1em 2.6em; }
+  h1 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 23px; margin: 0 0 .35em; color: #f3d27a; }
+  .updated { color: #a79fc4; font-size: 13px; margin: 0 0 1.4em; }
+  .card { background: #221a3f; border: 1px solid rgba(201,162,39,.45); border-radius: 12px; padding: 1.1em 1.2em; margin-bottom: 1.4em; }
+  h2 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 17px; margin: 0 0 .8em; color: #f3d27a; }
+  .note { color: #c9c2e0; font-size: 14px; line-height: 1.7; }
   .tblwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  table { border-collapse: collapse; width: 100%; min-width: 560px; }
-  th, td { border-bottom: 1px solid #e8eaed; padding: .5em .55em; text-align: left; font-size: 14px; line-height: 1.55; }
-  th { color: #374151; white-space: nowrap; }
-  td.num, td.race, td.order, td.pay { white-space: nowrap; }
-  td.order b { font-size: 16px; }
-  .hit { color: #dc2626; font-weight: bold; white-space: nowrap; }
-  .miss { color: #6b7280; white-space: nowrap; }
-  .tally { font-weight: bold; font-size: 15px; margin: .7em 0 0; }
-  .xbtn { display: inline-block; background: #000; color: #fff; padding: .55em 1.3em; border-radius: 999px; text-decoration: none; font-weight: bold; font-size: 14px; }
-  a { color: #1565c0; }
+  table { border-collapse: collapse; width: 100%; min-width: 580px; }
+  th, td { border-bottom: 1px solid rgba(236,231,245,.14); padding: .5em .55em; text-align: left; font-size: 14px; line-height: 1.55; }
+  th { color: #d9d2f0; white-space: nowrap; }
+  td.num, td.race, td.order, td.pay, td.id { white-space: nowrap; }
+  td.id { color: #f3d27a; font-weight: bold; }
+  td.order b { font-size: 16px; color: #f3d27a; }
+  .hit { color: #ff9d8a; font-weight: bold; white-space: nowrap; }
+  .miss { color: #a79fc4; white-space: nowrap; }
+  .tally { font-weight: bold; font-size: 15px; margin: .7em 0 0; color: #f3d27a; }
+  .xbtn { display: inline-block; background: #f3d27a; color: #16122b; padding: .55em 1.3em; border-radius: 999px; text-decoration: none; font-weight: bold; font-size: 14px; }
+  a { color: #9ec1ff; }
+  .legend { font-size: 13px; color: #c9c2e0; }
 </style>
 </head>
 <body>
+<div class="stars"></div>
 <div class="wrap">
-  <h1>⛵ BOAT NAVI 実況 2026-11-23 — 仙狐さんの占い</h1>
-  <p class="updated">最終更新: 2026-11-23 17:38（JST）</p>
+  <h1>🦊🌙 仙狐さんの占い — BOAT NAVI 実況 2026-11-23</h1>
+  <p class="updated">最終更新: 2026-11-23 17:45（JST）</p>
 
   <div class="card">
-    <p class="note">1号艇の複勝100円だけを買う、静かな実況ページです。買い目と結果と、予想の数字だけを載せます（予想の仕組みは載せません）。買わなかった候補も、結果つきで載せます。着順は1号艇の「1」だけ太字にしています。買い目にはIDを振っています（K=実買い、D=ダミー）で、レースごとの結果分析も同じIDで対応します。</p>
-    <p><a class="xbtn" href="https://twitter.com/intent/tweet?text=BOAT%20NAVI%E5%AE%9F%E6%B3%81%202026-11-23%EF%BD%9C%E5%AE%9F%E8%B2%B7%E3%81%84%2B90%E5%86%86%EF%BC%88%E5%9B%9E%E5%8F%8E%E7%8E%87122.5%25%EF%BC%89%E3%80%81%E3%83%80%E3%83%9F%E3%83%BC%E2%88%92100%E5%86%86&url=https%3A%2F%2Fpapk-x.github.io%2Fb-navi-xer%2F2026-11-23.html" target="_blank" rel="noopener">Xに投稿する</a></p>
+    <p class="note">わらわの占いは、1号艇の複勝だけを見る静かな占いじゃ。買い目と結果と、予想の数字だけを載せる。仕組みは明かさぬ。買わなかった候補も、結果つきで残すのじゃ。着順は1号艇の「1」だけ金色の太字じゃ。</p>
+    <p><a class="xbtn" href="https://twitter.com/intent/tweet?text=%E4%BB%99%E7%8B%90%E3%81%95%E3%82%93%E3%81%AE%E5%8D%A0%E3%81%84%EF%BD%9CBOAT%20NAVI%E5%AE%9F%E6%B3%81%202026-11-23%E3%80%81%E5%AE%9F%E8%B2%B7%E3%81%84%2B90%E5%86%86%EF%BC%88%E5%9B%9E%E5%8F%8E%E7%8E%87122.5%25%EF%BC%89%E3%80%81%E3%83%80%E3%83%9F%E3%83%BC%E2%88%92100%E5%86%86&url=https%3A%2F%2Fpapk-x.github.io%2Fb-navi-xer%2F2026-11-23.html" target="_blank" rel="noopener">Xに投稿する</a></p>
   </div>
 
   <div class="card">
-    <h2>本日の実買い</h2>
+    <h2>✦ 本日の実買い</h2>
     <div class="tblwrap">
     <table>
-    <tr><th>レース</th><th>買い目</th><th>2着内予想</th><th>着順</th><th>結果</th><th>払戻</th><th>収支</th><th>公式結果</th></tr>
-    <tr><td class="race">K1 びわこ 5R</td><td class="pay">複勝 1号艇 100円</td><td class="num">86.1%</td><td class="order"><b>1</b>-3-5-4-2-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">K2 尼崎 6R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.9%</td><td class="order">4-<b>1</b>-6-5-2-3</td><td class="hit">的中（2着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=6&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">K3 鳴門 11R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.7%</td><td class="order"><b>1</b>-4-5-3-2-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=14&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">K4 びわこ 8R</td><td class="pay">複勝 1号艇 100円</td><td class="num">80.9%</td><td class="order"><b>1</b>-3-4-2-5-6</td><td class="hit">的中</td><td class="num">190円</td><td class="num">+90円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=8&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><th>ID</th><th>レース</th><th>買い目</th><th>2着内予想</th><th>着順</th><th>結果</th><th>払戻</th><th>収支</th><th>公式結果</th></tr>
+    <tr><td class="id">K1</td><td class="race">びわこ 5R</td><td class="pay">複勝 1号艇 100円</td><td class="num">86.1%</td><td class="order"><b>1</b>-3-5-4-2-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">K2</td><td class="race">尼崎 6R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.9%</td><td class="order">4-<b>1</b>-6-5-2-3</td><td class="hit">的中（2着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=6&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">K3</td><td class="race">鳴門 11R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.7%</td><td class="order"><b>1</b>-4-5-3-2-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=14&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">K4</td><td class="race">びわこ 8R</td><td class="pay">複勝 1号艇 100円</td><td class="num">80.9%</td><td class="order"><b>1</b>-3-4-2-5-6</td><td class="hit">的中</td><td class="num">190円</td><td class="num">+90円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=8&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
     </table>
     </div>
     <p class="tally">実買い合計: +90円（回収率 122.5%）</p>
   </div>
 
   <div class="card">
-    <h2>ダミー運用（お金はかけていません）</h2>
+    <h2>✦ ダミー運用（お金はかけていない）</h2>
     <div class="tblwrap">
     <table>
-    <tr><th>レース</th><th>買い目</th><th>2着内予想</th><th>着順</th><th>結果</th><th>払戻</th><th>収支</th><th>公式結果</th></tr>
-    <tr><td class="race">D1 三国 12R</td><td class="pay">複勝 1号艇 100円</td><td class="num">81.0%</td><td class="order">3-5-<b>1</b>-4-2-6</td><td class="miss">外れ（3着）</td><td class="num">0円</td><td class="num">−100円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=10&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D2 尼崎 10R</td><td class="pay">複勝 1号艇 100円</td><td class="num">81.4%</td><td class="order"><b>1</b>-2-4-3-5-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=10&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D3 下関 1R</td><td class="pay">複勝 1号艇 100円</td><td class="num">83.9%</td><td class="order"><b>1</b>-2-3-5-6-4</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=1&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D4 尼崎 11R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.8%</td><td class="order"><b>1</b>-2-3-6-4-5</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D5 下関 3R</td><td class="pay">複勝 1号艇 100円</td><td class="num">80.3%</td><td class="order"><b>1</b>-3-6-4-5-2</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=3&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D6 下関 4R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.5%</td><td class="order"><b>1</b>-3-6-4-2-5</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=4&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">D7 下関 5R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.3%</td><td class="order">—</td><td class="hit">的中（2着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><th>ID</th><th>レース</th><th>買い目</th><th>2着内予想</th><th>着順</th><th>結果</th><th>払戻</th><th>収支</th><th>公式結果</th></tr>
+    <tr><td class="id">D1</td><td class="race">三国 12R</td><td class="pay">複勝 1号艇 100円</td><td class="num">81.0%</td><td class="order">3-5-<b>1</b>-4-2-6</td><td class="miss">外れ（3着）</td><td class="num">0円</td><td class="num">−100円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=10&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D2</td><td class="race">尼崎 10R</td><td class="pay">複勝 1号艇 100円</td><td class="num">81.4%</td><td class="order"><b>1</b>-2-4-3-5-6</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=10&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D3</td><td class="race">下関 1R</td><td class="pay">複勝 1号艇 100円</td><td class="num">83.9%</td><td class="order"><b>1</b>-2-3-5-6-4</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=1&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D4</td><td class="race">尼崎 11R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.8%</td><td class="order"><b>1</b>-2-3-6-4-5</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D5</td><td class="race">下関 3R</td><td class="pay">複勝 1号艇 100円</td><td class="num">80.3%</td><td class="order"><b>1</b>-3-6-4-5-2</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=3&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D6</td><td class="race">下関 4R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.5%</td><td class="order"><b>1</b>-3-6-4-2-5</td><td class="hit">的中（1着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=4&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">D7</td><td class="race">下関 5R</td><td class="pay">複勝 1号艇 100円</td><td class="num">82.3%</td><td class="order">—</td><td class="hit">的中（2着）</td><td class="num">100円</td><td class="num">±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=19&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
     </table>
     </div>
     <p class="tally">ダミー収支: −100円（回収率 85.7%）</p>
   </div>
 
   <div class="card">
-    <h2>買わなかった候補（結果つき）</h2>
+    <h2>✦ 買わなかった候補（結果つき）</h2>
     <div class="tblwrap">
     <table>
-    <tr><th>レース</th><th>2着内予想</th><th>買わなかった理由</th><th>着順</th><th>1号艇</th><th>買っていたら</th><th>公式結果</th></tr>
-    <tr><td class="race">芦屋 11R（実）</td><td class="num">82.1%</td><td>前のレースの結果待ち</td><td class="order"><b>1</b>-3-6-4-5-2</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=21&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">多摩川 8R（実）</td><td class="num">79.7%</td><td>80%未満</td><td class="order"><b>1</b>-5-2-6-4-3</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=8&jcd=05&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">福岡 7R（実）</td><td class="num">85.1%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-4-2-3-5-6</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=7&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">芦屋 12R（ダミー）</td><td class="num">82.1%</td><td>ダミー開始が遅れ再確認できず</td><td class="order"><b>1</b>-3-6-2-4-5</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=21&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">尼崎 9R（ダミー）</td><td class="num">87.0%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-5-4-6-3-2</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=9&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">びわこ 10R（ダミー）</td><td class="num">—</td><td>直前情報が取れず</td><td class="order"><b>1</b>-4-3-2-6-5</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=10&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">福岡 9R（ダミー）</td><td class="num">86.8%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-5-2-3-6-4</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=9&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">福岡 11R（ダミー）</td><td class="num">85.9%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-4-5-6-3-2</td><td class="hit">1着</td><td class="num">複勝130円・+30円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">尼崎 12R（ダミー）</td><td class="num">78.6%</td><td>80%未満</td><td class="order"><b>1</b>-2-4-5-3-6</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">福岡 12R（ダミー）</td><td class="num">88.0%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-2-5-3-6-4</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">大村 4R（ダミー）</td><td class="num">78.8%</td><td>80%未満</td><td class="order">3-<b>1</b>-5-2-6-4</td><td class="hit">2着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=4&jcd=24&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
-    <tr><td class="race">住之江 5R（ダミー）</td><td class="num">84.2%</td><td>前のレースの結果待ち</td><td class="order"><b>1</b>-4-2-…</td><td class="hit">1着</td><td class="num">複勝180円・+80円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=12&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><th>ID</th><th>レース</th><th>2着内予想</th><th>買わなかった理由</th><th>着順</th><th>1号艇</th><th>買っていたら</th><th>公式結果</th></tr>
+    <tr><td class="id">S1</td><td class="race">芦屋 11R（実）</td><td class="num">82.1%</td><td>前のレースの結果待ち</td><td class="order"><b>1</b>-3-6-4-5-2</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=21&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S2</td><td class="race">多摩川 8R（実）</td><td class="num">79.7%</td><td>80%未満</td><td class="order"><b>1</b>-5-2-6-4-3</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=8&jcd=05&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S3</td><td class="race">福岡 7R（実）</td><td class="num">85.1%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-4-2-3-5-6</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=7&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S4</td><td class="race">芦屋 12R（ダミー）</td><td class="num">82.1%</td><td>ダミー開始が遅れ再確認できず</td><td class="order"><b>1</b>-3-6-2-4-5</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=21&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S5</td><td class="race">尼崎 9R（ダミー）</td><td class="num">87.0%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-5-4-6-3-2</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=9&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S6</td><td class="race">びわこ 10R（ダミー）</td><td class="num">—</td><td>直前情報が取れず</td><td class="order"><b>1</b>-4-3-2-6-5</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=10&jcd=11&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S7</td><td class="race">福岡 9R（ダミー）</td><td class="num">86.8%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-5-2-3-6-4</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=9&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S8</td><td class="race">福岡 11R（ダミー）</td><td class="num">85.9%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-4-5-6-3-2</td><td class="hit">1着</td><td class="num">複勝130円・+30円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=11&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S9</td><td class="race">尼崎 12R（ダミー）</td><td class="num">78.6%</td><td>80%未満</td><td class="order"><b>1</b>-2-4-5-3-6</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=13&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S10</td><td class="race">福岡 12R（ダミー）</td><td class="num">88.0%</td><td>85%以上・人気過多</td><td class="order"><b>1</b>-2-5-3-6-4</td><td class="hit">1着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=12&jcd=22&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S11</td><td class="race">大村 4R（ダミー）</td><td class="num">78.8%</td><td>80%未満</td><td class="order">3-<b>1</b>-5-2-6-4</td><td class="hit">2着</td><td class="num">複勝100円・±0円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=4&jcd=24&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
+    <tr><td class="id">S12</td><td class="race">住之江 5R（ダミー）</td><td class="num">84.2%</td><td>前のレースの結果待ち</td><td class="order"><b>1</b>-4-2-…</td><td class="hit">1着</td><td class="num">複勝180円・+80円</td><td><a href="https://www.boatrace.jp/owpc/pc/race/raceresult?rno=5&jcd=12&hd=20261123" target="_blank" rel="noopener">公式結果</a></td></tr>
     </table>
     </div>
   </div>
 
   <div class="card">
-    <h2>レースごとの結果分析</h2>
+    <h2>✦ レースごとの結果分析</h2>
     <div class="tblwrap">
     <table>
-    <tr><th>レース</th><th>区分</th><th>ひとこと分析</th></tr>
-    <tr><td class="race">K1 びわこ 5R</td><td class="num">実買い</td><td>小坂尚哉、展示5位と目立たなかったが予想通りイン逃げ。風1m・波1cmの静水面で押し切った</td></tr>
-    <tr><td class="race">K2 尼崎 6R</td><td class="num">実買い</td><td>4号艇の板橋侑我に先行されたが、展示1位の足で2着を確保。複勝は守った</td></tr>
-    <tr><td class="race">K3 鳴門 11R</td><td class="num">実買い</td><td>佐々木大河（A1）、展示1位・ST0.02。予想通りのイン逃げで実力が光った</td></tr>
-    <tr><td class="race">K4 びわこ 8R</td><td class="num">実買い</td><td>服部幸男、風4m・波3cmの荒れ水面でもイン逃げ。払戻190円が今日の実買いの山</td></tr>
-    <tr><td class="race">D1 三国 12R</td><td class="num">ダミー</td><td>今日いちばんの荒れ水面（風7m・波7cm）。3号艇の藤田俊祐にまくられ5号艇にも先行されて3着。唯一の外れは水面条件が最悪のレースだった</td></tr>
-    <tr><td class="race">D2 尼崎 10R</td><td class="num">ダミー</td><td>大場恒季（A1）、展示1位。予想通りイン逃げで順当</td></tr>
-    <tr><td class="race">D3 下関 1R</td><td class="num">ダミー</td><td>大井清貴、展示1位。1-2-3の順当決着</td></tr>
-    <tr><td class="race">D4 尼崎 11R</td><td class="num">ダミー</td><td>石田章央（A1）、展示2位からイン逃げ。人気に応えた</td></tr>
-    <tr><td class="race">D5 下関 3R</td><td class="num">ダミー</td><td>三浦洋次朗、展示1位。風1mの静水面で順当にイン逃げ</td></tr>
-    <tr><td class="race">D6 下関 4R</td><td class="num">ダミー</td><td>畑和宏、展示1位。こちらも静水面で順当な逃げ</td></tr>
-    <tr><td class="race">D7 下関 5R</td><td class="num">ダミー</td><td>飯山泰（A1）、3号艇の関根彰人に先行されたが2着を確保。単勝3,460円の波乱でも複勝は守った</td></tr>
-    <tr><td class="race">芦屋 11R</td><td class="num">見送り（実）</td><td>山口裕二、展示1位で順当に1着。結果待ちの間に締切が来たが、買っても払戻100円だった</td></tr>
-    <tr><td class="race">多摩川 8R</td><td class="num">見送り（実）</td><td>永田秀二、79.7%で見送ったが結果は1着。境界のすぐ下だった</td></tr>
-    <tr><td class="race">福岡 7R</td><td class="num">見送り（実）</td><td>大原祥昌、85%超で見送り。結果1着でも払戻100円、見送りで正解の形</td></tr>
-    <tr><td class="race">芦屋 12R</td><td class="num">見送り</td><td>江夏満、展示6位からでも1着。展示最下位からの逃げは予想外だった</td></tr>
-    <tr><td class="race">尼崎 9R</td><td class="num">見送り</td><td>西野翔太、87.0%で見送り。結果1着・払戻100円</td></tr>
-    <tr><td class="race">びわこ 10R</td><td class="num">見送り</td><td>川尻泰輔、風5m・波4cmの荒れ水面、展示ST0.29と遅れても1着。直前情報が取れず見送り</td></tr>
-    <tr><td class="race">福岡 9R</td><td class="num">見送り</td><td>土井歩夢、展示2位で1着。85%超の見送り</td></tr>
-    <tr><td class="race">福岡 11R</td><td class="num">見送り</td><td>竹下大樹、展示1位で1着、払戻130円。今日の見送りで唯一、買えば+30円だった</td></tr>
-    <tr><td class="race">尼崎 12R</td><td class="num">見送り</td><td>河村了、78.6%で見送り。結果は1-2の順当決着で1着</td></tr>
-    <tr><td class="race">福岡 12R</td><td class="num">見送り</td><td>飛田江己、展示1位・ST0.00で1着。88%の人気通り</td></tr>
-    <tr><td class="race">大村 4R</td><td class="num">見送り</td><td>市川哲也（A1）、3号艇の近江翔吾にまくられ2着。78.8%の見送りでも複勝圏は守っていた</td></tr>
-    <tr><td class="race">住之江 5R</td><td class="num">見送り</td><td>清水攻二（A2）、展示1位。風0mの静水面で順当にイン逃げし複勝180円。結果待ちで見送ったが、買えば+80円だった</td></tr>
+    <tr><th>ID</th><th>レース</th><th>仙狐のふりかえり</th></tr>
+    <tr><td class="id">K1</td><td class="race">びわこ 5R</td><td>小坂尚哉、展示5位と目立たなかったが予想通りイン逃げ。風1m・波1cmの静水面で押し切ったのじゃ</td></tr>
+    <tr><td class="id">K2</td><td class="race">尼崎 6R</td><td>4号艇の板橋侑我に先行されたが、展示1位の足で2着を確保。複勝は守ったのじゃ</td></tr>
+    <tr><td class="id">K3</td><td class="race">鳴門 11R</td><td>佐々木大河（A1）、展示1位・ST0.02。予想通りのイン逃げで、実力が光ったのじゃ</td></tr>
+    <tr><td class="id">K4</td><td class="race">びわこ 8R</td><td>服部幸男、風4m・波3cmの荒れ水面でもイン逃げ。払戻190円が今日の実買いの山じゃ</td></tr>
+    <tr><td class="id">D1</td><td class="race">三国 12R</td><td>今日いちばんの荒れ水面（風7m・波7cm）。3号艇の藤田俊祐にまくられ、5号艇にも先行されて3着。唯一の外れは、水面条件が最悪のレースであったのじゃ</td></tr>
+    <tr><td class="id">D2</td><td class="race">尼崎 10R</td><td>大場恒季（A1）、展示1位。予想通りイン逃げで順当じゃ</td></tr>
+    <tr><td class="id">D3</td><td class="race">下関 1R</td><td>大井清貴、展示1位。1-2-3の順当決着じゃ</td></tr>
+    <tr><td class="id">D4</td><td class="race">尼崎 11R</td><td>石田章央（A1）、展示2位からイン逃げ。人気に応えたのじゃ</td></tr>
+    <tr><td class="id">D5</td><td class="race">下関 3R</td><td>三浦洋次朗、展示1位。風1mの静水面で順当にイン逃げじゃ</td></tr>
+    <tr><td class="id">D6</td><td class="race">下関 4R</td><td>畑和宏、展示1位。こちらも静水面で順当な逃げじゃ</td></tr>
+    <tr><td class="id">D7</td><td class="race">下関 5R</td><td>飯山泰（A1）、3号艇の関根彰人に先行されたが2着を確保。単勝3,460円の波乱でも複勝は守ったのじゃ</td></tr>
+    <tr><td class="id">S1</td><td class="race">芦屋 11R</td><td>山口裕二、展示1位で順当に1着。結果待ちの間に締切が来たが、買っても払戻100円であったのじゃ</td></tr>
+    <tr><td class="id">S2</td><td class="race">多摩川 8R</td><td>永田秀二、79.7%で見送ったが結果は1着。境界のすぐ下であったのじゃ</td></tr>
+    <tr><td class="id">S3</td><td class="race">福岡 7R</td><td>大原祥昌、85%超で見送り。結果1着でも払戻100円、見送りで正解の形じゃ</td></tr>
+    <tr><td class="id">S4</td><td class="race">芦屋 12R</td><td>江夏満、展示6位からでも1着。展示最下位からの逃げは予想外であったのじゃ</td></tr>
+    <tr><td class="id">S5</td><td class="race">尼崎 9R</td><td>西野翔太、87.0%で見送り。結果1着・払戻100円じゃ</td></tr>
+    <tr><td class="id">S6</td><td class="race">びわこ 10R</td><td>川尻泰輔、風5m・波4cmの荒れ水面、展示ST0.29と遅れても1着。直前情報が取れず見送ったのじゃ</td></tr>
+    <tr><td class="id">S7</td><td class="race">福岡 9R</td><td>土井歩夢、展示2位で1着。85%超の見送りじゃ</td></tr>
+    <tr><td class="id">S8</td><td class="race">福岡 11R</td><td>竹下大樹、展示1位で1着、払戻130円。今日の見送りで唯一、買えば+30円であったのじゃ</td></tr>
+    <tr><td class="id">S9</td><td class="race">尼崎 12R</td><td>河村了、78.6%で見送り。結果は1-2の順当決着で1着じゃ</td></tr>
+    <tr><td class="id">S10</td><td class="race">福岡 12R</td><td>飛田江己、展示1位・ST0.00で1着。88%の人気通りじゃ</td></tr>
+    <tr><td class="id">S11</td><td class="race">大村 4R</td><td>市川哲也（A1）、3号艇の近江翔吾にまくられ2着。78.8%の見送りでも複勝圏は守っておったのじゃ</td></tr>
+    <tr><td class="id">S12</td><td class="race">住之江 5R</td><td>清水攻二（A2）、展示1位。風0mの静水面で順当にイン逃げし複勝180円。結果待ちで見送ったが、買えば+80円であったのじゃ</td></tr>
     </table>
     </div>
   </div>
 
   <div class="card">
-    <h2>収支グラフ</h2>
+    <h2>✦ 収支グラフ</h2>
     <svg viewBox="0 0 640 240" width="100%" role="img" aria-label="収支の推移グラフ">
-      <line x1="50" y1="20" x2="50" y2="200" stroke="#d1d5db" />
-      <line x1="50" y1="65" x2="610" y2="65" stroke="#e8eaed" />
-      <line x1="50" y1="110" x2="610" y2="110" stroke="#9ca3af" stroke-dasharray="4 3" />
-      <line x1="50" y1="155" x2="610" y2="155" stroke="#e8eaed" />
-      <text x="44" y="69" text-anchor="end" font-size="13" fill="#6b7280">+100</text>
-      <text x="44" y="114" text-anchor="end" font-size="13" fill="#6b7280">0</text>
-      <text x="44" y="159" text-anchor="end" font-size="13" fill="#6b7280">−100</text>
-      <polyline points="50,110 130,110 210,110 290,110 370,65" fill="none" stroke="#1565c0" stroke-width="2.5" />
-      <polyline points="50,110 130,155 210,155 290,155 370,155 450,155 530,155 610,155" fill="none" stroke="#d18d12" stroke-width="2.5" />
-      <circle cx="370" cy="65" r="4" fill="#1565c0" />
-      <circle cx="610" cy="155" r="4" fill="#d18d12" />
-      <text x="378" y="61" font-size="13" fill="#1565c0">実買い +90円</text>
-      <text x="462" y="141" font-size="13" fill="#9c6d0d">ダミー −100円</text>
-      <text x="50" y="222" font-size="13" fill="#6b7280">レースを買うたびの累計（左から時系列）</text>
+      <line x1="50" y1="20" x2="50" y2="200" stroke="#4a3f78" />
+      <line x1="50" y1="65" x2="610" y2="65" stroke="#322a55" />
+      <line x1="50" y1="110" x2="610" y2="110" stroke="#6b5ca5" stroke-dasharray="4 3" />
+      <line x1="50" y1="155" x2="610" y2="155" stroke="#322a55" />
+      <text x="44" y="69" text-anchor="end" font-size="13" fill="#a79fc4">+100</text>
+      <text x="44" y="114" text-anchor="end" font-size="13" fill="#a79fc4">0</text>
+      <text x="44" y="159" text-anchor="end" font-size="13" fill="#a79fc4">−100</text>
+      <polyline points="50,110 130,110 210,110 290,110 370,65" fill="none" stroke="#9ec1ff" stroke-width="2.5" />
+      <polyline points="50,110 130,155 210,155 290,155 370,155 450,155 530,155 610,155" fill="none" stroke="#f3d27a" stroke-width="2.5" />
+      <circle cx="370" cy="65" r="4" fill="#9ec1ff" />
+      <circle cx="610" cy="155" r="4" fill="#f3d27a" />
+      <text x="378" y="61" font-size="13" fill="#9ec1ff">実買い +90円</text>
+      <text x="462" y="141" font-size="13" fill="#f3d27a">ダミー −100円</text>
+      <text x="50" y="222" font-size="13" fill="#a79fc4">レースを買うたびの累計（左から時系列）</text>
     </svg>
   </div>
 
   <div class="card">
-    <h2>その日の総合（全レース・1号艇だけを見ると）</h2>
-    <p class="note">今日候補になった全23レースで、ただの1号艇の着順パターン。</p>
-    <div class="tblwrap">
-    <table>
-    <tr><th>1号艇の着順</th><th>件数</th><th>割合</th></tr>
-    <tr><td class="num">1着</td><td class="num">19件</td><td class="num">82.6%</td></tr>
-    <tr><td class="num">2着</td><td class="num">3件</td><td class="num">13.0%</td></tr>
-    <tr><td class="num">3着以下</td><td class="num">1件</td><td class="num">4.3%</td></tr>
-    </table>
-    </div>
-    <p class="tally">2着内は22件（95.7%）。外れたのは三国12R（3着）だけ。</p>
-    <p class="note">全23レースで1号艇を100円ずつ買っていた場合のシミュレーション。</p>
+    <h2>✦ 2着内率グラフ（予想と実際）</h2>
+    <svg viewBox="0 0 640 300" width="100%" role="img" aria-label="2着内率の予想と実際のグラフ">
+      <line x1="60" y1="250" x2="610" y2="250" stroke="#4a3f78" />
+      <line x1="60" y1="200" x2="610" y2="200" stroke="#322a55" />
+      <line x1="60" y1="150" x2="610" y2="150" stroke="#322a55" />
+      <line x1="60" y1="100" x2="610" y2="100" stroke="#322a55" />
+      <line x1="60" y1="50" x2="610" y2="50" stroke="#322a55" />
+      <text x="54" y="254" text-anchor="end" font-size="13" fill="#a79fc4">0%</text>
+      <text x="54" y="154" text-anchor="end" font-size="13" fill="#a79fc4">50%</text>
+      <text x="54" y="54" text-anchor="end" font-size="13" fill="#a79fc4">100%</text>
+      <rect x="110" y="77" width="52" height="173" fill="#7a6fc0" />
+      <rect x="170" y="50" width="52" height="200" fill="#f3d27a" />
+      <text x="118" y="69" font-size="13" fill="#c9c2e0">86.5%</text>
+      <text x="176" y="42" font-size="13" fill="#f3d27a">100%</text>
+      <text x="105" y="272" font-size="13" fill="#ece7f5">85〜100%の帯</text>
+      <rect x="290" y="86" width="52" height="164" fill="#7a6fc0" />
+      <rect x="350" y="65" width="52" height="185" fill="#f3d27a" />
+      <text x="298" y="78" font-size="13" fill="#c9c2e0">82.2%</text>
+      <text x="352" y="57" font-size="13" fill="#f3d27a">92.3%</text>
+      <text x="288" y="272" font-size="13" fill="#ece7f5">80〜85%の帯</text>
+      <rect x="470" y="92" width="52" height="158" fill="#7a6fc0" />
+      <rect x="530" y="50" width="52" height="200" fill="#f3d27a" />
+      <text x="480" y="84" font-size="13" fill="#c9c2e0">79.0%</text>
+      <text x="536" y="42" font-size="13" fill="#f3d27a">100%</text>
+      <text x="468" y="272" font-size="13" fill="#ece7f5">75〜80%の帯</text>
+    </svg>
+    <p class="legend">紫が予想の平均、金が実際の2着内率じゃ。今日はどの帯でも、実際が予想を上回ったのじゃ。</p>
+  </div>
+
+  <div class="card">
+    <h2>✦ その日の総合（全レース・1号艇だけを見ると）</h2>
+    <p class="note">今日候補になった全23レースで、ただの1号艇の着順パターンじゃ。</p>
+    <svg viewBox="0 0 300 190" width="100%" role="img" aria-label="1号艇の着順パターンの円グラフ" style="max-width:340px; display:block; margin:0 auto;">
+      <circle cx="110" cy="90" r="62" fill="none" stroke="#565064" stroke-width="26" />
+      <circle cx="110" cy="90" r="62" fill="none" stroke="#8f83c9" stroke-width="26" stroke-dasharray="50.8 389.6" stroke-dashoffset="-338.8" transform="rotate(-90 110 90)" />
+      <circle cx="110" cy="90" r="62" fill="none" stroke="#f3d27a" stroke-width="26" stroke-dasharray="321.9 389.6" stroke-dashoffset="0" transform="rotate(-90 110 90)" />
+      <text x="110" y="86" text-anchor="middle" font-size="15" fill="#ece7f5">2着内</text>
+      <text x="110" y="108" text-anchor="middle" font-size="15" fill="#f3d27a">95.7%</text>
+      <circle cx="205" cy="52" r="6" fill="#f3d27a" />
+      <text x="218" y="57" font-size="13" fill="#ece7f5">1着 19件</text>
+      <circle cx="205" cy="82" r="6" fill="#8f83c9" />
+      <text x="218" y="87" font-size="13" fill="#ece7f5">2着 3件</text>
+      <circle cx="205" cy="112" r="6" fill="#565064" />
+      <text x="218" y="117" font-size="13" fill="#ece7f5">3着以下 1件</text>
+    </svg>
+    <p class="tally">外れたのは三国12R（3着）だけじゃ。</p>
+    <p class="note">全23レースで1号艇を100円ずつ買っていた場合の試算じゃ。</p>
     <div class="tblwrap">
     <table>
     <tr><th>買い方</th><th>賭け金</th><th>払戻</th><th>収支</th><th>回収率</th></tr>
@@ -160,7 +199,16 @@
     <tr><td class="num">複勝 1号艇</td><td class="num">2,300円</td><td class="num">2,400円</td><td class="num">+100円</td><td class="num">104.3%</td></tr>
     </table>
     </div>
-    <p class="note">参考：2着内予想の帯ごとでは、85〜100%は6件中6件、80〜85%は13件中12件（92.3%）、75〜80%は3件中3件。予想の平均は83.0%（予想なし1レースを除く22レース）。</p>
+    <svg viewBox="0 0 640 92" width="100%" role="img" aria-label="回収率の棒グラフ">
+      <line x1="330" y1="6" x2="330" y2="86" stroke="#6b5ca5" stroke-dasharray="4 3" />
+      <text x="330" y="90" text-anchor="middle" font-size="13" fill="#a79fc4"></text>
+      <rect x="330" y="14" width="21" height="16" fill="#9ec1ff" />
+      <text x="60" y="27" font-size="13" fill="#ece7f5">単勝の回収率 107.0%</text>
+      <rect x="330" y="44" width="13" height="16" fill="#f3d27a" />
+      <text x="60" y="57" font-size="13" fill="#ece7f5">複勝の回収率 104.3%</text>
+      <text x="336" y="90" font-size="13" fill="#a79fc4">中央の破線が100%</text>
+    </svg>
+    <p class="note">参考：2着内予想の帯ごとでは、85〜100%は6件中6件、80〜85%は13件中12件（92.3%）、75〜80%は3件中3件。予想の平均は83.0%（予想なし1レースを除く22レース）じゃ。</p>
   </div>
 
   <p><a href="index.html">← 日付一覧へ戻る</a></p>
