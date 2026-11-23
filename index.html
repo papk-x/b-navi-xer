@@ -28,6 +28,7 @@
   .day::after { content: "›"; position: absolute; right: .6em; top: .7em; color: #f3d27a; font-size: 19px; }
   .day:last-child { border-bottom: none; }
   .day .d { font-size: 17px; font-weight: bold; color: #9ec1ff; }
+  .day .thumb { display: block; width: 200px; max-width: 60%; height: auto; border-radius: 6px; margin-bottom: .45em; border: 1px solid rgba(201,162,39,.35); }
   .day .meta { font-size: 13px; color: #c9c2e0; margin-top: .25em; line-height: 1.6; }
   .pager { display: flex; align-items: center; gap: 1em; margin-top: 1em; }
   .pager button { background: #16122b; color: #f3d27a; border: 1px solid rgba(201,162,39,.6); border-radius: 999px; padding: .4em 1.1em; font-size: 14px; cursor: pointer; }
@@ -81,7 +82,7 @@
 </div>
 <script>
   var DAYS = [
-    { date: "2026-11-23", href: "2026-11-23.html", real: 90, realRoi: 122.5, dummy: -160, dummyRoi: 86.7, races: 39 }
+    { date: "2026-11-23", href: "2026-11-23.html", real: 90, realRoi: 122.5, dummy: -160, dummyRoi: 86.7, races: 39, thumb: "card-2026-11-23.png" }
   ];
   var PER = 10, page = 0;
   var yen = function (v) { return (v > 0 ? "+" : v < 0 ? "−" : "±") + Math.abs(v) + "円"; };
@@ -108,7 +109,7 @@
     var html = "";
     if (!part.length) html = '<p class="note">あてはまる日がないのじゃ。</p>';
     part.forEach(function (d) {
-      html += '<a class="day" href="' + d.href + '"><span class="d">' + d.date + '</span>' +
+      html += '<a class="day" href="' + d.href + '">' + (d.thumb ? '<img class="thumb" src="' + d.thumb + '" alt="">' : '') + '<span class="d">' + d.date + '</span>' +
         '<span class="meta">実買い <span class="' + cls(d.real) + '">' + yen(d.real) + '</span>（回収率 ' + d.realRoi + '%）' +
         ' ／ ダミー <span class="' + cls(d.dummy) + '">' + yen(d.dummy) + '</span>（回収率 ' + d.dummyRoi + '%）' +
         ' ／ 候補 ' + d.races + 'レース</span></a>';
