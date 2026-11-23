@@ -3,20 +3,133 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BOAT NAVI 実況 | 仙狐さんの占い</title>
+<title>仙狐さんの占い | BOAT NAVI 実況</title>
 <style>
-  body { font-family: sans-serif; margin: 2em auto; max-width: 640px; padding: 0 1em; color: #222; }
-  h1 { font-size: 1.4em; }
-  .note { color: #666; font-size: .9em; }
-  li { margin: .4em 0; }
+  * { box-sizing: border-box; }
+  body { font-family: system-ui, "Hiragino Sans", "Noto Sans JP", sans-serif; margin: 0; background: #16122b; color: #ece7f5; font-size: 16px; }
+  .stars { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-image: radial-gradient(rgba(255,236,180,.5) 1px, transparent 1.4px), radial-gradient(rgba(200,190,255,.35) 1px, transparent 1.4px); background-size: 90px 90px, 140px 140px; background-position: 0 0, 40px 60px; opacity: .5; }
+  .wrap { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 1.6em 1.1em 2.6em; }
+  .banner { border-radius: 12px; overflow: hidden; border: 1px solid rgba(201,162,39,.45); margin-bottom: 1.2em; }
+  .banner img { display: block; width: 100%; height: 190px; object-fit: cover; object-position: center 30%; }
+  h1 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 23px; margin: 0 0 .35em; color: #f3d27a; }
+  .updated { color: #a79fc4; font-size: 13px; margin: 0 0 1.4em; }
+  .card { background: #221a3f; border: 1px solid rgba(201,162,39,.45); border-radius: 12px; padding: 1.1em 1.2em; margin-bottom: 1.4em; }
+  h2 { font-family: "Hiragino Mincho ProN", "Yu Mincho", serif; font-size: 17px; margin: 0 0 .8em; color: #f3d27a; }
+  .note { color: #c9c2e0; font-size: 14px; line-height: 1.7; }
+  .plus { color: #ff7a6b; font-weight: bold; }
+  .minus { color: #6bb8ff; font-weight: bold; }
+  .controls { display: flex; flex-wrap: wrap; gap: .6em; margin-bottom: 1em; }
+  .controls label { font-size: 13px; color: #c9c2e0; display: flex; align-items: center; gap: .35em; }
+  select { background: #16122b; color: #ece7f5; border: 1px solid rgba(201,162,39,.45); border-radius: 6px; padding: .35em .5em; font-size: 14px; }
+  .day { display: block; padding: .8em .2em; border-bottom: 1px solid rgba(236,231,245,.14); text-decoration: none; color: #ece7f5; }
+  .day:last-child { border-bottom: none; }
+  .day .d { font-size: 17px; font-weight: bold; color: #9ec1ff; }
+  .day .meta { font-size: 13px; color: #c9c2e0; margin-top: .25em; line-height: 1.6; }
+  .pager { display: flex; align-items: center; gap: 1em; margin-top: 1em; }
+  .pager button { background: #16122b; color: #f3d27a; border: 1px solid rgba(201,162,39,.6); border-radius: 999px; padding: .4em 1.1em; font-size: 14px; cursor: pointer; }
+  .pager button:disabled { opacity: .35; cursor: default; }
+  .pager .info { font-size: 13px; color: #c9c2e0; }
+  .credit { font-size: 13px; color: #a79fc4; }
+  a { color: #9ec1ff; }
 </style>
 </head>
 <body>
-<h1>⛵ BOAT NAVI 実況 — 仙狐さんの占い</h1>
-<p class="note">1号艇の複勝100円だけを買う、静かな実況ページです。日付ごとにまとめています。買い目と結果と、予想の数字だけを載せます（予想の仕組みは載せません）。</p>
-<h2>日付一覧</h2>
-<ul>
-<li><a href="2026-11-23.html">2026-11-23</a> — 実買い +90円／ダミー −100円</li>
-</ul>
+<div class="stars"></div>
+<div class="wrap">
+  <div class="banner"><img src="bg-shrine.jpg" alt="夜の神社と鳥居と三日月の和風イラスト"></div>
+  <h1>🦊🌙 仙狐さんの占い — BOAT NAVI 実況</h1>
+  <p class="updated">1号艇の複勝だけを見る、静かな占いの記録じゃ。</p>
+
+  <div class="card">
+    <h2>✦ 通算</h2>
+    <p class="note" id="total-note">実買い合計: <span class="plus">+90円</span>（回収率 122.5%）／ ダミー合計: <span class="minus">−100円</span>（回収率 85.7%）／ 記録は1日分じゃ。</p>
+  </div>
+
+  <div class="card">
+    <h2>✦ 日付一覧</h2>
+    <div class="controls">
+      <label>並び替え
+        <select id="sort">
+          <option value="desc">新しい日順</option>
+          <option value="asc">古い日順</option>
+        </select>
+      </label>
+      <label>年月
+        <select id="month"><option value="">すべて</option></select>
+      </label>
+      <label>実買い
+        <select id="sign">
+          <option value="">すべて</option>
+          <option value="plus">プラス日だけ</option>
+          <option value="minus">マイナス日だけ</option>
+        </select>
+      </label>
+    </div>
+    <div id="list"></div>
+    <div class="pager">
+      <button id="prev" type="button">← 前へ</button>
+      <span class="info" id="pageinfo"></span>
+      <button id="next" type="button">次へ →</button>
+    </div>
+  </div>
+
+  <p class="credit">背景のイラスト素材: <a href="https://freekawaii.com/shrine-night-view-v1/" target="_blank" rel="noopener">freekawaii（夜の神社）</a></p>
+</div>
+<script>
+  var DAYS = [
+    { date: "2026-11-23", href: "2026-11-23.html", real: 90, realRoi: 122.5, dummy: -100, dummyRoi: 85.7, races: 23 }
+  ];
+  var PER = 10, page = 0;
+  var yen = function (v) { return (v > 0 ? "+" : v < 0 ? "−" : "±") + Math.abs(v) + "円"; };
+  var cls = function (v) { return v > 0 ? "plus" : v < 0 ? "minus" : ""; };
+  function filtered() {
+    var m = document.getElementById("month").value;
+    var sg = document.getElementById("sign").value;
+    var arr = DAYS.filter(function (d) {
+      if (m && d.date.slice(0, 7) !== m) return false;
+      if (sg === "plus" && !(d.real > 0)) return false;
+      if (sg === "minus" && !(d.real < 0)) return false;
+      return true;
+    });
+    var dir = document.getElementById("sort").value === "asc" ? 1 : -1;
+    arr.sort(function (a, b) { return a.date < b.date ? -dir : dir; });
+    return arr;
+  }
+  function render() {
+    var arr = filtered();
+    var pages = Math.max(1, Math.ceil(arr.length / PER));
+    if (page >= pages) page = pages - 1;
+    if (page < 0) page = 0;
+    var part = arr.slice(page * PER, page * PER + PER);
+    var html = "";
+    if (!part.length) html = '<p class="note">あてはまる日がないのじゃ。</p>';
+    part.forEach(function (d) {
+      html += '<a class="day" href="' + d.href + '"><span class="d">' + d.date + '</span>' +
+        '<span class="meta">実買い <span class="' + cls(d.real) + '">' + yen(d.real) + '</span>（回収率 ' + d.realRoi + '%）' +
+        ' ／ ダミー <span class="' + cls(d.dummy) + '">' + yen(d.dummy) + '</span>（回収率 ' + d.dummyRoi + '%）' +
+        ' ／ 候補 ' + d.races + 'レース</span></a>';
+    });
+    document.getElementById("list").innerHTML = html;
+    document.getElementById("pageinfo").textContent = (arr.length ? (page + 1) + " / " + pages + " ページ（全" + arr.length + "日）" : "");
+    document.getElementById("prev").disabled = page <= 0;
+    document.getElementById("next").disabled = page >= pages - 1;
+  }
+  (function () {
+    var months = {};
+    DAYS.forEach(function (d) { months[d.date.slice(0, 7)] = true; });
+    var sel = document.getElementById("month");
+    Object.keys(months).sort().reverse().forEach(function (m) {
+      var o = document.createElement("option");
+      o.value = m; o.textContent = m.replace("-", "年") + "月";
+      sel.appendChild(o);
+    });
+    ["sort", "month", "sign"].forEach(function (id) {
+      document.getElementById(id).addEventListener("change", function () { page = 0; render(); });
+    });
+    document.getElementById("prev").addEventListener("click", function () { page--; render(); });
+    document.getElementById("next").addEventListener("click", function () { page++; render(); });
+    render();
+  })();
+</script>
 </body>
 </html>
