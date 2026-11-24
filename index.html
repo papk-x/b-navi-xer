@@ -51,14 +51,14 @@
 
   <div class="card">
     <h2>✦ 通算</h2>
-    <p class="note" id="total-note">実買い合計: <span class="plus">+90円</span>（回収率 122.5%）／ ダミー合計: <span class="minus">−160円</span>（回収率 86.7%）／ 記録は1日分じゃ。</p>
+    <p class="note" id="total-note">実買い合計: <span class="plus">+90円</span>（回収率 112.9%）／ ダミー合計: <span class="minus">−160円</span>（回収率 86.7%）／ 記録は2日分じゃ。</p>
   </div>
 
   <div class="card">
     <h2>✦ 月別</h2>
     <table class="mtable">
       <tr><th>月</th><th>日数</th><th>実買い</th><th>ダミー</th><th>候補</th></tr>
-      <tr><td>2026年11月</td><td>1日</td><td><span class="plus">+90円</span>（122.5%）</td><td><span class="minus">−160円</span>（86.7%）</td><td>39</td></tr>
+      <tr><td>2026年11月</td><td>2日</td><td><span class="plus">+90円</span>（112.9%）</td><td><span class="minus">−160円</span>（86.7%）</td><td>56</td></tr>
     </table>
   </div>
 
@@ -94,6 +94,7 @@
 </div>
 <script>
   var DAYS = [
+    { date: "2026-11-24", href: "2026-11-24.html", real: 0, realRoi: 100.0, dummy: null, dummyRoi: null, races: 17, thumb: "card-2026-11-24.png" },
     { date: "2026-11-23", href: "2026-11-23.html", real: 90, realRoi: 122.5, dummy: -160, dummyRoi: 86.7, races: 39, thumb: "card-2026-11-23.png" }
   ];
   var PER = 10, page = 0;
@@ -121,9 +122,10 @@
     var html = "";
     if (!part.length) html = '<p class="note">あてはまる日がないのじゃ。</p>';
     part.forEach(function (d) {
+      var dum = (d.dummy == null) ? 'ダミー 未集計' : 'ダミー <span class="' + cls(d.dummy) + '">' + yen(d.dummy) + '</span>（回収率 ' + d.dummyRoi + '%）';
       html += '<a class="day" href="' + d.href + '">' + (d.thumb ? '<img class="thumb" src="' + d.thumb + '" alt="">' : '') + '<span class="d">' + d.date + '</span>' +
         '<span class="meta">実買い <span class="' + cls(d.real) + '">' + yen(d.real) + '</span>（回収率 ' + d.realRoi + '%）' +
-        ' ／ ダミー <span class="' + cls(d.dummy) + '">' + yen(d.dummy) + '</span>（回収率 ' + d.dummyRoi + '%）' +
+        ' ／ ' + dum +
         ' ／ 候補 ' + d.races + 'レース</span></a>';
     });
     document.getElementById("list").innerHTML = html;
